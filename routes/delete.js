@@ -13,4 +13,10 @@ router.get('/', function(req, res, next) {
   res.render('delete', { title: 'PoIs löschen' });
 });
 
+/**
+ * router.delete(){
+ *  
+ * }
+ */
+
 module.exports = router;
