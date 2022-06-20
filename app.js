@@ -5,9 +5,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var addRouter = require('./routes/add');
-var usersRouter = require('./routes/users');
 var showRouter = require('./routes/show');
 var deleteRouter = require('./routes/delete');
+
+var leafletcssRouter = require('./node_modules/leaflet/dist/leaflet.css')
+var leafletjsRouter = require('./node_modules/leaflet/dist/leaflet.js')
+var leafletDrawcssRouter = require('./node_modules/leaflet-draw/dist/leaflet.draw.css')
+var leafletDrawjsRouter = require('./node_modules/leaflet-draw/dist/leaflet.draw.js')
+
 
 var app = express();
 
@@ -21,11 +26,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(express.static(path.join(__dirname, '/node_modules/leaflet/dist/leaflet.css')));
+app.use(express.static(path.join(__dirname, '/node_modules/leaflet/dist/leaflet.js')));
+app.use(express.static(path.join(__dirname, '/node_modules/leaflet-draw/dist/leaflet.draw.css')));
+app.use(express.static(path.join(__dirname, '/node_modules/leaflet-draw/dist/leaflet.draw.js')));
+
+
 app.use('/', addRouter);
-app.use('/users', usersRouter);
 app.use('/show', showRouter);
 app.use('/delete', deleteRouter);
 
+app.use('/node_modules/leaflet/dist/leaflet.css', leafletcssRouter);
+app.use('/node_modules/leaflet/dist/leaflet.js', leafletjsRouter);
+app.use('/node_modules/leaflet-draw/dist/leaflet.draw.css', leafletDrawcssRouter);
+app.use('/node_modules/leaflet-draw/dist/leaflet.draw.js', leafletDrawjsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
