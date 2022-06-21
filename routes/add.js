@@ -15,14 +15,28 @@ router.get('/', function(req, res, next) {
 
 router.post('/newpoi', function(req, res, next) 
 {
+  if(req.body.name==null || req.body.long==null || req.body.name==null){
+    res.render('add_notification', { title: 'PoI konnte nicht hinzugefügt werden. Überprüfe eingabe!'});
+  }
   console.log("A new poi has been added")
 
-  console.log(req.body)
-  let poi = {}
-  poi.name = req.body.pname
-  poi.cityname = req.body.cname
-  poi.coordinates = req.body.longlat
+  poi = {
+    "type": "Feature",
+    "properties": {
+      "shape": "Marker",
+      "name": req.body.name,
+      "category": "default"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        req.body.long,
+        req.body.lat
+      ]
+    }
+  }
 
+  console.log(poi)
 
   // connect to the mongodb database and afterwards, insert one the new element
   client.connect(function(err) 
@@ -39,9 +53,8 @@ router.post('/newpoi', function(req, res, next)
     {
       assert.equal(err, null)
       assert.equal(1, result.result.ok)
-      //console.log(result)
       console.log(`Inserted ${result.insertedCount} document into the collection`)
-      res.render('2_add_notification', { title: 'Addition Completed', data: poi});
+      res.render('add_notification', { title: 'PoI hinzugefügt'});
      })
   
   })    
