@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
 //Post Location - this post operation can be used to store new locations in the locations collection
 router.post('/removePoI', function (req, res, next) {
 
-  console.log("PoI deleted! congrats")
+  console.log("PoI deleted!")
 
   var poiName = req.body.name
 
@@ -50,11 +50,5 @@ router.post('/removePoI', function (req, res, next) {
         })
     })
 });
-
-/**
- * router.delete(){
- *  
- * }
- */
 
 module.exports = router;
