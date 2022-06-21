@@ -5,5 +5,9 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-var drawnItems = new L.FeatureGroup();
-map.addLayer(drawnItems);
+
+geojson.forEach(element => {
+    var marker = L.marker([element.geometry.coordinates[1], element.geometry.coordinates[0]]).addTo(map);
+    marker.bindPopup("Name: " + element.properties.name).openPopup();
+});
+
