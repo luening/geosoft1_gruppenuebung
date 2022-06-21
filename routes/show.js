@@ -5,7 +5,7 @@ const assert = require('assert');
 
 const url = 'mongodb://localhost:27017'; // connection URL
 const client = new MongoClient(url); // mongodb client
-const dbName = 'geosoft1' ;// database name
+const dbName = 'mydatabase' ;// database name
 const collectionName = 'pois'; // collection name
 
 
