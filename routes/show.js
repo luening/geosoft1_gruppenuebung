@@ -24,7 +24,7 @@ router.get('/', function (req, res, next) {
     {
       //assert.equal(err, null);
       console.log('Found the following records...');
-      console.log(docs)
+      console.log(docs[0])
       res.render('show', { title: 'PoIs anzeigen'});
 
     })

@@ -7,7 +7,7 @@ var logger = require('morgan');
 var addRouter = require('./routes/add');
 var showRouter = require('./routes/show');
 var deleteRouter = require('./routes/delete');
-var show_poiRouter = require('./public/javascripts/show_poi');
+//var show_poiRouter = require('./public/javascripts/show_poi');
 
 /*
 var leafletcssRouter = require('./node_modules/leaflet/dist/leaflet.css')
@@ -43,7 +43,7 @@ app.use('/node_modules/leaflet-draw/dist/leaflet.draw.js', leafletDrawjsRouter);
 app.use('/', addRouter);
 app.use('/show', showRouter);
 app.use('/delete', deleteRouter);
-app.use('/show_poi', show_poiRouter);
+//app.use('/show_poi', show_poiRouter);
 
 
 // catch 404 and forward to error handler
