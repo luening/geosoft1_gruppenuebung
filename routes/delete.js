@@ -13,7 +13,7 @@ const app = express(); //initialize express app
 //MongoClient and DB
 const url = "mongodb://localhost:27017"; // connection URL
 const client = new MongoClient(url); // mongodb client
-const { stringify } = require("querystring");
+//const { stringify } = require("querystring");
 const dbName = "mydatabase"; // database name
 const collectionName = "pois"; // collection name
 
@@ -26,12 +26,12 @@ router.get("/", function (req, res, next) {
 router.post("/removePoI", function (req, res, next) {
   console.log("PoI deleted!");
 
-  var poiName = req.body.name;
+  var poiName = req.body.poiname;
 
   //Check if Name exists
   client.connect(function (err) {
     const db = client.db(dbName);
-    const collection = db.collection(boxesCollection);
+    const collection = db.collection(collectionName);
 
     collection.find({ name: poiName }).toArray(function (err, docs) {
       if (docs.length >= 1) {

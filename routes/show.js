@@ -13,10 +13,20 @@ router.get("/", function (req, res, next) {
   client.connect(function (err) {
     //assert.equal(null, err);
 
-    console.log("Connected successfully to server");
+    console.log('Connected successfully to server');
 
     const db = client.db(dbName);
     const collection = db.collection(collectionName);
+
+    collection.find({}).toArray(function(err, docs) 
+    {
+      assert.equal(err, null);
+      console.log('Found the following records...');
+      res.render('show', { title: 'PoIs anzeigen', data: docs});
+
+    })
+
+  })
 
     collection.find({}).toArray(function (err, docs) {
       //assert.equal(err, null);

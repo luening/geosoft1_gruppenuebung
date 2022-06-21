@@ -50,8 +50,7 @@ router.post("/add/newpoi", function (req, res, next) {
       //assert.equal(err, null);
       //assert.equal(1, result.result.ok);
       console.log(
-        `Inserted ${result.insertedCount} document into the collection`
-      );
+        `Inserted ${result.insertedCount} document into the collection` );
       res.render("add_notification", { title: "PoI hinzugefügt" });
     });
   });
