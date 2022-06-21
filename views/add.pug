@@ -3,4 +3,22 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  form(action='/add/new_poi' method='post')
+    fieldset
+      .form-group.row
+        label.col-sm-1.col-form-label(for='poiname') POI Name
+        .col-sm-4
+          input#name.form-control(type='text' name="pname" placeholder='PoI Name eingeben')
+      .form-group.row
+        label.col-sm-1.col-form-label(for='coordinates-long') Longitude
+        .col-sm-4
+          input#long.form-control(type='text' name="long" placeholder='Longitude eingeben')
+      .form-group.row
+        label.col-sm-1.col-form-label(for='coordinates-lat') Latitude
+        .col-sm-4
+          input#lat.form-control(type='text' name="lat" placeholder='Latitude eingeben')
+      button.btn.btn-primary.mb-2(type='submit') Speichern
   #map
+
+  block scripts 
+    script(src="/javascripts/add_poi.js" defer)
