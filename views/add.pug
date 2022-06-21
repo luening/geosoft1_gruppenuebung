@@ -5,12 +5,12 @@ block content
   p Welcome to #{title}
   br
   br
-  form(action='/add/new_poi' method='post')
+  form(action='/add/newpoi' method='post')
     fieldset
       .form-group.row
         label.col-sm-1.col-form-label(for='poiname') POI Name
         .col-sm-4
-          input#name.form-control(type='text' name="pname" placeholder='PoI Name eingeben')
+          input#name.form-control(type='text' name="poiname" placeholder='PoI Name eingeben')
       .form-group.row
         label.col-sm-1.col-form-label(for='coordinates-long') Longitude
         .col-sm-4
