@@ -47,10 +47,4 @@ router.post('/removePoI', function (req, res, next) {
     })
 });
 
-/**
- * router.delete(){
- *  
- * }
- */
-
 module.exports = router;
