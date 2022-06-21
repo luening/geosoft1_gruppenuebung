@@ -1,9 +1,9 @@
 # geosoft1_gruppenuebung
 Gruppenabgabe Geosoftware 1
 
-Team member (Team Spaßleistung): 
-Hendrik Lüning (Readme)
-Robert Schmitz (hauptsächlich)
+Team member: 
+-   Hendrik Lüning
+-   Robert Schmitz 
 
 HOW TO START:
 
