@@ -1,24 +1,24 @@
 var express = require('express');
 var router = express.Router();
-const MongoClient = require('mongodb').MongoClient
-const assert = require('assert')
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
 
-const url = 'mongodb://127.0.0.1:27017' // connection URL
-const client = new MongoClient(url) // mongodb client
-const dbName = 'geosoft1' // database name
-const collectionName = 'pois' // collection name
+const url = 'mongodb://localhost:27017'; // connection URL
+const client = new MongoClient(url); // mongodb client
+const dbName = 'geosoft1' ;// database name
+const collectionName = 'pois'; // collection name
 
 
 router.get('/', function (req, res, next) {
 
   // connect to the mongodb database and retrieve all docs
   client.connect(function (err) {
-    assert.equal(null, err)
+    assert.equal(null, err);
 
-    console.log('Connected successfully to server')
+    console.log('Connected successfully to server');
 
-    const db = client.db(dbName)
-    const collection = db.collection(collectionName)
+    const db = client.db(dbName);
+    const collection = db.collection(collectionName);
 
     collection.find({}).toArray(function(err, docs) 
     {
