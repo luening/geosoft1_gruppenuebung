@@ -3,7 +3,7 @@ var router = express.Router();
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
-const url = 'mongodb://localhost:27017'; // connection URL
+const url = 'mongodb://127.0.0.1:27017'; // connection URL
 const client = new MongoClient(url); // mongodb client
 const dbName = 'mydatabase' ;// database name
 const collectionName = 'pois'; // collection name
