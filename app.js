@@ -39,7 +39,7 @@ app.use('/node_modules/leaflet-draw/dist/leaflet.draw.css', leafletDrawcssRouter
 app.use('/node_modules/leaflet-draw/dist/leaflet.draw.js', leafletDrawjsRouter);
 */
 
-app.use('/add', addRouter);
+app.use('/', addRouter);
 app.use('/show', showRouter);
 app.use('/delete', deleteRouter);
 
