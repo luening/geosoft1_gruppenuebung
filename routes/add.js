@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
   res.render('add', { title: 'PoIs hinzufügen' });
 });
 
-router.post('/newpoi', function(req, res, next) 
+router.post('/add/newpoi', function(req, res, next) 
 {
   if(req.body.name==null || req.body.long==null || req.body.name==null){
     res.render('add_notification', { title: 'PoI konnte nicht hinzugefügt werden. Überprüfe eingabe!'});
