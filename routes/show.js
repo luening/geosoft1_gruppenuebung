@@ -34,6 +34,6 @@ router.get("/", function (req, res, next) {
       res.render("show", { title: "PoIs anzeigen", data: docs });
     });
   });
-});
+;
 
 module.exports = router;
