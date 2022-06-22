@@ -5,10 +5,10 @@ block content
   p Welcome to #{title}
   br
   br
-  form(action='/delete_poi' method='post')
+  form(action='/delete/delete_poi' method='post')
     fieldset
       .form-group.row
         label.col-sm-1.col-form-label(for='poiname') POI Name
         .col-sm-4
-          input#name.form-control(type='text' name="pname" placeholder='PoI Name eingeben')
+          input#name.form-control(type='text' name="poiname")
       button.btn.btn-primary.mb-2(type='submit') Löschen
