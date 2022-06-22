@@ -2,9 +2,15 @@
 Gruppenabgabe Geosoftware 1
 
 Team member: 
--   Hendrik Lüning
+-   Hendrik Lüning 
 -   Robert Schmitz 
 
 HOW TO START:
 
-Terminal --> npm start
+Terminal 
+--> npm install 
+--> npm start
+
+
+
+
