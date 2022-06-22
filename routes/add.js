@@ -15,8 +15,8 @@ router.get("/", function (req, res, next) {
 
 router.post("/add/newpoi", function (req, res, next) {
   if (req.body.poiname == "" || req.body.long == "" || req.body.lat == "") {
-    res.render("add_notification", {
-      title: "PoI konnte nicht hinzugefügt werden. Überprüfe eingabe!",
+    res.render("notification", {
+      title: "PoI konnte nicht hinzugefügt werden. Überprüfe Eingabe!",
     });
   }else {
     console.log("A new poi has been added");
@@ -51,7 +51,7 @@ router.post("/add/newpoi", function (req, res, next) {
         //assert.equal(1, result.result.ok);
         console.log(
           `Inserted ${result.insertedCount} document into the collection`);
-        res.render("add_notification", { title: "PoI hinzugefügt" });
+        res.render("notification", { title: "PoI hinzugefügt!" });
       });
     });
   };
