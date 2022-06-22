@@ -14,7 +14,7 @@ router.get("/", function (req, res, next) {
 });
 
 router.post("/add/newpoi", function (req, res, next) {
-  if (req.body.poiname == null || req.body.long == null || req.body.lat == null) {
+  if (req.body.poiname == "" || req.body.long == "" || req.body.lat == "") {
     res.render("add_notification", {
       title: "PoI konnte nicht hinzugefügt werden. Überprüfe eingabe!",
     });
