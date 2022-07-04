@@ -1,15 +1,14 @@
 # geosoft1_gruppenuebung
-Gruppenabgabe Geosoftware 1
+Geosoftware1 Aufgabe 7
 
-Team member: 
--   Hendrik Lüning 
--   Robert Schmitz 
+    download docker-compose.yaml file
+    go to CLI and run 'docker-compose up' at the path of docker-compose.yaml file
 
-HOW TO START:
+Path to Dockerhub:
 
-Terminal 
---> npm install 
---> npm start
+https://hub.docker.com/repository/docker/luening/geosoft1_gruppenuebung
+
+Authors: Hendrik Lüning, Robert Schmitz
 
 
 
